@@ -59,7 +59,7 @@ class MainMenu: SKScene  {
         //if(self.interstitial.isReady) {
         //self.interstitial.presentFromRootViewController(GameViewController())
         //self.interstitial = self.createAndLoadAd()
-        //}
+        //}??
 
         }
        
