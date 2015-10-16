@@ -19,6 +19,7 @@ class InGameScene: SKScene, SKPhysicsContactDelegate  {
     
     let transitionFade = SKTransition.fadeWithDuration(3.0)
     var background: SKSpriteNode
+    var adScreenTransition: Array <Int> = [/*1,2,3,4,5,*/6]
 
     
     override init(size: CGSize) {
@@ -88,6 +89,11 @@ class InGameScene: SKScene, SKPhysicsContactDelegate  {
     
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let randomIndex = Int(arc4random_uniform(UInt32(adScreenTransition.count)))
+        var otherDefaults = NSUserDefaults()
+        otherDefaults.setInteger(adScreenTransition[randomIndex], forKey: "add")
+        var addTransition = otherDefaults.integerForKey("add")
+        
         var scene = MainMenu(size: self.size)
         let skView = self.view as SKView!
         skView.ignoresSiblingOrder = true

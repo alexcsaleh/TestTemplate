@@ -19,7 +19,7 @@ class MainMenu: SKScene  {
     
     let background = SKSpriteNode(imageNamed: "Background")
     let startButton = SKSpriteNode(imageNamed: "StartButton")
-
+    var addTransition = NSUserDefaults().integerForKey("add")
     
     
     
@@ -51,7 +51,17 @@ class MainMenu: SKScene  {
     
     
     override func didMoveToView(view: SKView) {
+        NSUserDefaults().setInteger(addTransition, forKey: "add")
         
+        
+        if addTransition == 6 {
+            println("SWEEEEEEEET")
+        //if(self.interstitial.isReady) {
+        //self.interstitial.presentFromRootViewController(GameViewController())
+        //self.interstitial = self.createAndLoadAd()
+        //}
+
+        }
        
         
         self.startButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
